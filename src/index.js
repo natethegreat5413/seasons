@@ -14,15 +14,19 @@ class App extends React.Component {
 		);
 	}
 
-	// React says we have to define render!!
-	render() {
+	// helper function.  You don't want to have more than one return statement in a render function in case you have to do something to the whole app.
+	renderContent() {
 		if (this.state.errorMessage && !this.state.lat) {
 			return <div>Error: {this.state.errorMessage}</div>;
 		} else if (!this.state.errorMessage && this.state.lat) {
 			return <SeasonDisplay lat={this.state.lat} />;
 		} else {
-			return <Loader />;
+			return <Loader loadingMessage="Please accept location request" />;
 		}
+	}
+
+	render() {
+		return <div className="border red">{this.renderContent()}</div>;
 	}
 }
 
