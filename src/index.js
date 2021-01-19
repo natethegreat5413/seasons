@@ -20,7 +20,7 @@ class App extends React.Component {
 		} else if (!this.state.errorMessage && this.state.lat) {
 			return <SeasonDisplay lat={this.state.lat} />;
 		} else {
-			return <div>Loading . . . </div>;
+			return <div>Loading . . . We'll have your information shortly! </div>;
 		}
 	}
 }
