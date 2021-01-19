@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Loader from './Loader';
 
 class App extends React.Component {
 	// this is abreviated syntax so you don't have to use 'this' or the constructor.
@@ -20,7 +21,7 @@ class App extends React.Component {
 		} else if (!this.state.errorMessage && this.state.lat) {
 			return <SeasonDisplay lat={this.state.lat} />;
 		} else {
-			return <div>Loading . . . We'll have your information shortly! </div>;
+			return <Loader />;
 		}
 	}
 }
